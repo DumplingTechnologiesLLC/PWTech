@@ -9,7 +9,10 @@ const path = require('path');
  * Live reload setup
  */
 const liveReloadServer = livereload.createServer()
-liveReloadServer.watch(path.join(__dirname, 'public'));
+liveReloadServer.watch([
+  path.join(__dirname, 'views', 'pages'),
+  path.join(__dirname, 'views', 'partials'),
+]);
 
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
@@ -24,13 +27,16 @@ app.set('view engine', 'ejs');
 // Use `.hbs` for extensions and find partials in `views/partials`.
 
 app.use(connectLivereload());
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 //Hot reload!
 //ALL server routes are in this module!
 
 
 app.get('/', function(req, res) {
+  res.render('pages/index');
+});
+app.get('/about', function(req, res) {
   res.render('pages/index');
 });
 //...
