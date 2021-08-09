@@ -12,7 +12,7 @@
     "PWTech"
   ],
   "author": "Pedro Del Moral Lopez",
-  "license": "ISC",
+  "license": "LicenseRef-LICENSE",
   "dependencies": {
     "connect-livereload": "^0.6.1",
     "ejs": "^3.1.6",
