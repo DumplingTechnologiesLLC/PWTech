@@ -1,6 +1,7 @@
 node_modules
 public
 
-views/css/fonts.css
+views/css/*.css
+views/css/*.css.map
 
-views/css/fonts.css.map
+views/css/main.css.map
