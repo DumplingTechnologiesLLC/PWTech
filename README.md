@@ -17,6 +17,12 @@ For Linux: https://linuxconfig.org/install-npm-on-linux/
 1. Run `npm run start` and open a browser to `http://localhost:3000` to see the static frontend
 2. You can now make changes and the server will hot-reload the changes.
 
+### Changing CSS
+
+The easiest way to change the CSS is to edit the `*.scss` files in `views/css` while the development server is running.
+The sass compiler will watch those files and output the changes into `views/css` for development, and `public/css` for
+production.
+
 
 ## For Production
 
