@@ -15,7 +15,7 @@ const path = require('path');
       const templatePath = path.join(__dirname, 'views', 'pages', file);
       const stat = await fs.promises.stat(templatePath)
       if(stat.isFile()) {
-        const toPath = path.join(__dirname, 'public', `${file.split('.').slice(0,-1).join('')}.html`)
+        const toPath = path.join(__dirname, 'public', 'views', `${file.split('.').slice(0,-1).join('')}.html`)
         const templateStr = ejs.fileLoader(templatePath, 'utf8');
         const template = ejs.compile(templateStr, { filename: templatePath });
         const renderedHtml = template();

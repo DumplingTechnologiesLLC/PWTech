@@ -27,7 +27,7 @@ app.set('view engine', 'ejs');
 // Use `.hbs` for extensions and find partials in `views/partials`.
 
 app.use(connectLivereload());
-// app.use(express.static('public'))
+app.use(express.static('views'))
 
 //Hot reload!
 //ALL server routes are in this module!
