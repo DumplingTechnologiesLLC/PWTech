@@ -5,4 +5,57 @@
   box-sizing: border-box;
   background-color: $pw-gray;
   color: $pw-text;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    & > img {
+      height: 52px;
+      margin-bottom: .3em; /* Adjustment to align bottom of text in logo with rest of brand*/
+    }
+    font-size: 26px;
+    color: $pw-text;
+    text-decoration: none;
+    &:hover, &:visited {
+      color: $pw-text
+    }
+  }
+
+  &__links {
+    position: relative;
+    background-color: $pw-purple;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: white;
+    list-style: none;
+    &__item {
+      padding: 0 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &__link {
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity .3s ease-out;
+        &:hover, &:visited {
+          color: white;
+          opacity: 1;
+        }
+      }
+    }
+    &::before {
+      width: 0;
+      height: 0;
+      content: ' ';
+      border-bottom: 60px solid $pw-purple;
+      border-left: 100px solid transparent;
+      position:absolute;
+      right: 100%;
+    }
+  }
 }
