@@ -13,7 +13,9 @@ const path = require('path');
     // Loop them all with the new for...of
     files.forEach(async (file) => {
       const templatePath = path.join(__dirname, 'views', 'pages', file);
-      const stat = await fs.promises.stat(templatePath)
+      const stat = await fs.promises.stat(templatePath);
+
+      // non product pages we can just compile without issue. Product page we need to load the products from JSON
       if(stat.isFile()) {
         const toPath = path.join(__dirname, 'public', 'views', `${file.split('.').slice(0,-1).join('')}.html`)
         const templateStr = ejs.fileLoader(templatePath, 'utf8');
