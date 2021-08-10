@@ -5,7 +5,7 @@ const connectLivereload = require("connect-livereload");
 const path = require('path');
 const fs = require('fs');
 
-
+const products = JSON.parse(fs.readFileSync('./products.json', {encoding:'utf8', flag:'r'}));
 /**
  * Live reload setup
  */
@@ -35,9 +35,9 @@ app.use(express.static('views'))
 
 
 app.get('/', function(req, res) {
-  const data = JSON.parse(fs.readFileSync('./products.json', {encoding:'utf8', flag:'r'}));
+  
   res.render('pages/index', {
-    products: data,
+    products,
   });
 });
 app.get('/about', function(req, res) {

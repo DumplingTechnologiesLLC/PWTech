@@ -3,36 +3,96 @@
     "title": "Volute Dewatering Press",
     "image": "volute_dewatering_press.webp",
     "alt": "Image of our Volute Dewatering Press",
-    "endpoint": "/volute_dewatering_press"
+    "endpoint": "/volute_dewatering_press",
+    "contentOrdering": [
+      "Description",
+      "Application",
+      "Advantages",
+      "A Fully Automated System",
+      "Design Criteria"
+    ],
+    "content": {
+      "Description": {
+        "content": "This innovative sludge dewatering product offers many advantages over conventional sludge management methods. Originally developed in Japan, the Volute Dewatering Press is patented worldwide, with more than 650 installations. The key to the process is the unique dewatering drum design. This drum is able to achieve both thickening and pressing (dewatering) of the sludge in a single, compact operation. It can take sludge as dilute as 0.1% solids, directly from a biological process, such as an oxidation ditch, and produce a cake of over 25% solids. Download our product flyer for more details on system operation."},
+      "Application": {
+        "content": "The PWTech® Volute Dewatering Press has been installed to handle a wide range of sludges. It is especially useful when sludges have a high oil and fat content that would bind filter materials. Types of sludge the Dewatering Press has been utilized to dewater:",
+        "list": [
+          "Waste biological sludges (including WAS, fixed film, MBR, aerobic and anaerobic digested)",
+          "Potable water sludges (including alum, ferric, and PAC sludges)",
+          "DAF float from slaughter houses and other agricultural processes",
+          "Oil sludge from machining operations",
+          "Wastes from textile processing",
+          "Food processing and wash-down wastes"
+        ]
+      },
+      "Advantages": {
+        "content": "",
+        "list": [
+          "Highly efficient dewatering",
+          "Eliminate thickening and storage tanks",
+          "24-hour unattended operation",
+          "Reduced running costs",
+          "Can handle feed sludges from <0.2% to >4%",
+          "Less noise, less odor",
+          "Low power and wash water consumption",
+          "Rapid installation"
+        ]
+      },
+      "A Fully Automated System": {
+        "content": "The Volute Dewatering Press is a fully automated system capable of starting up, operating, and shutting down with no operator intervention. This is possible because the control panel is designed to control the operation of wasting sludge directly from the biological processor or clarifier, the automated polymer feed system, flocculation, dewatering, and any conveyors required to remove dewatered cake. Thus, all components of the dewatering system work together, automatically starting up, operating, and shutting down as required."
+      },
+      "Design Criteria": {
+        "content": "PWTech can provide complete systems or work with other suppliers to provide an integrated package. In addition, unit operating and alarm outputs for connection to plant PLC/SCADA systems are standard. Several models are available. Download our product flyer for a list of available model sizes."
+      }
+    },
+    "extraLinks": [
+      { "Download Product Flyer": "/path/to/file" },
+      { "View Product Animation": "/path/to/animation" }
+    ]
   },
   {
     "title": "Raked Bar Screen",
     "image": "raked_bar_screen.webp",
     "alt": "Image of our Raked Bar Screen",
-    "endpoint": "/raked_bar_screen"
+    "endpoint": "/raked_bar_screen",
+    "content": {
+
+    }
   },
   {
     "title": "SANSEP",
     "image": "SANSEP.webp",
     "alt": "Image of our SANSEP",
-    "endpoint": "/sansep"
+    "endpoint": "/sansep",
+    "content": {
+
+    }
   },
   {
     "title": "Tipping Bucket",
     "image": "tipping_bucket.webp",
     "alt": "Image of our Tipping Bucket",
-    "endpoint": "/tipping_bucket"
+    "endpoint": "/tipping_bucket",
+    "content": {
+
+    }
   },
   {
     "title": "Volute Thickener",
     "image": "volute_thickener.webp",
     "alt": "Image of our Volute Thickener",
-    "endpoint": "/volute_thickener"
+    "endpoint": "/volute_thickener",
+    "content": {
+
+    }
   },
   {
     "title": "Cyclone",
     "image": "cyclone.webp",
     "alt": "Image of our Cyclone",
-    "endpoint": "/cyclone"
+    "endpoint": "/cyclone",
+    "content": {
+
+    }
   }
 ]
