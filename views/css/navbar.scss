@@ -9,6 +9,9 @@
   justify-content: space-between;
   flex-wrap: nowrap;
 
+  /**
+  * The navbar brand and image
+  */
   &__brand {
     display: flex;
     align-items: center;
