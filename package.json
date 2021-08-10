@@ -2,6 +2,11 @@
   "name": "pwtech",
   "version": "1.0.0",
   "description": "PWTech static frontend",
+  "keywords": [
+    "PWTech"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Pedro Del Moral Lopez",
   "main": "index.js",
   "scripts": {
     "compile": "node compiler.js",
@@ -9,21 +14,20 @@
     "watch:scss": "sass --watch views/css:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "PWTech"
-  ],
-  "author": "Pedro Del Moral Lopez",
-  "license": "LicenseRef-LICENSE",
   "dependencies": {
-    "connect-livereload": "^0.6.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-hbs": "^2.4.0",
-    "livereload": "^0.9.3",
-    "nodemon": "^2.0.12"
+    "ejs": "^3.1.6"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",
+    "connect-livereload": "^0.6.1",
+    "eslint": "^7.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "express": "^4.17.1",
+    "express-hbs": "^2.4.0",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.12",
     "sass": "^1.37.5"
   }
 }

@@ -1,0 +1,21 @@
+.imageSection {
+  display: flex;
+  flex-wrap: wrap;
+  & > .imageSection__imageContainer {
+    margin: 0 1em 0 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 310px;
+    & > img {
+      width: 100%;
+      
+    }
+  }
+  & > .imageSection__textContainer {
+    flex: 1;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="../css/productPage.css">
+  </head>
+  <body class="container">
+
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+      <h1 class="productTitle"><%= product.title %></h1>
+
+      <section class="imageSection">
+        <div class="imageSection__imageContainer">
+          <img src="../assets/<%= product.image %>" alt="<%= product.alt %>">
+        </div>
+        <div class="imageSection__textContainer">
+          <% product.contentOrdering.slice(0,2).forEach(function(section) { %>
+            <h2 class="linedTitle">
+              <%= section %>
+            </h2>
+            
+            <!-- Content Iteration here -->
+            <% product.content[section].content.forEach(function(content) { %>
+              <p><%= content %></p>
+            <% }); %>
+
+            <!-- If list is greater than 0, we begin a ul -->
+            <% if (product.content[section].list.length > 0) { %>
+              <ul>
+            <% } %>
+            <% product.content[section].list.forEach(function(content) { %>
+              <li><%= content %></li>
+            <% }); %>
+
+            <!-- If list is greater than 0, we conclude a ul -->
+            <% if (product.content[section].list.length > 0) { %>
+              </ul>
+            <% } %>
+
+            <!-- If orderedList is greater than 0, we begin a ol -->
+            <% if (product.content[section].orderedList.length > 0) { %>
+              <ol>
+            <% } %>
+            <% product.content[section].orderedList.forEach(function(content) { %>
+              <li><%= content %></li>
+            <% }); %>
+
+            <!-- If orderedList is greater than 0, we conclude a ol -->
+            <% if (product.content[section].orderedList.length > 0) { %>
+            </ol>
+            <% } %> 
+          <% }); %>    
+        </div>
+      </section>
+      <% product.contentOrdering.slice(2).forEach(function(section) { %>
+        <h2 class="linedTitle">
+          <%= section %>
+        </h2>
+        
+        <!-- Content Iteration here -->
+        <% product.content[section].content.forEach(function(content) { %>
+          <p><%= content %></p>
+        <% }); %>
+
+        <!-- If list is greater than 0, we begin a ul -->
+        <% if (product.content[section].list.length > 0) { %>
+          <ul>
+        <% } %>
+        <% product.content[section].list.forEach(function(content) { %>
+          <li><%= content %></li>
+        <% }); %>
+
+        <!-- If list is greater than 0, we conclude a ul -->
+        <% if (product.content[section].list.length > 0) { %>
+          </ul>
+        <% } %>
+
+        <!-- If orderedList is greater than 0, we begin a ol -->
+        <% if (product.content[section].orderedList.length > 0) { %>
+          <ol>
+        <% } %>
+        <% product.content[section].orderedList.forEach(function(content) { %>
+          <li><%= content %></li>
+        <% }); %>
+
+        <!-- If orderedList is greater than 0, we conclude a ol -->
+        <% if (product.content[section].orderedList.length > 0) { %>
+        </ol>
+        <% } %> 
+      <% }); %>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+
+  </body>
+</html>

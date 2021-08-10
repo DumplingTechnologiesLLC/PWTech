@@ -9,7 +9,7 @@
           </a>
           <button 
             role="link"
-            onclick="history.pushState({}, '<%= product.title %>', '<%= product.endpoint %>')"
+            onclick="window.location = '<%= product.endpoint %>'"
             class="button button--primary-outline button--block"
             >
             See Product Details
