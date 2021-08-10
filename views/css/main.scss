@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;;
 }
-header {
+header, footer {
   width: 100%;
 }
 main {
@@ -21,7 +21,7 @@ main {
   padding: 2em;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1920px;
+  max-width: $maximum-content-width;
   flex: 1;
 }
 
@@ -61,7 +61,10 @@ main {
 
 .products__container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  @media screen and (max-width: 770px) {
+    justify-content: center; /** flex-start looks awful below this width */
+  }
   flex-wrap: wrap;
   margin-top: 1em;
   margin-left: -$card-horizontal-clearance; /* To realign the cards with the left hand and right hand side*/

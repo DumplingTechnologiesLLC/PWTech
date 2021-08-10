@@ -9,6 +9,9 @@
 }
 .heroTitle {
   font-size: 53px;
+  @media screen and (max-width: 560px) {
+    font-size: 40px; /** To prevent an unnecessary word wrap*/
+  }
 }
 .heroText {
   font-size: 24px;

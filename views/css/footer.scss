@@ -1,0 +1,52 @@
+@import './variables';
+
+.footer {
+  background-color: $pw-gray;
+  border-top: 4px solid $pw-purple;
+  margin-top: 2em;
+  padding: 2em;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  color: #444;
+  &__text {
+    font-weight: bold;
+  }
+  &__footercontent {
+    display: flex;
+    width: 100%;
+    max-width: $maximum-content-width;
+    margin: 0 auto;
+    flex-direction: row;
+    &__socialmedia {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;;
+    }
+    &__links {
+      &__link {
+        font-size: 1em;
+        margin: .5em 0;
+        text-decoration: none;
+        &:visited {
+          color: #444;
+        }
+      }
+      flex: 1;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+}
+
+.socialmedia {
+  & + & {
+    margin-left: 1em;
+  }
+  & > img {
+    height: 45px;
+    width: 45px;
+    background-color: white;
+    border-radius: 5px;
+  }
+}

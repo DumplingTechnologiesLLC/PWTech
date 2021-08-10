@@ -1,1 +1,29 @@
-<p class="text-center text-muted">&copy; Copyright 2020 The Awesome People</p>
+<div class="footer">
+  <div class="footer__footercontent">
+    <div class="footer__footercontent__links">
+      <a href="/" class="footer__footercontent__links__link">Home</a>
+      <a href="/" class="footer__footercontent__links__link">Terms of Use</a>
+      <a href="/" class="footer__footercontent__links__link">Technology Partners</a>
+      <a href="/" class="footer__footercontent__links__link">Site Map</a>
+    </div>
+    <div class="footer__footercontent__socialmedia">
+      <a href="https://www.facebook.com/pwtechmd/" class="socialmedia facebook">
+        <img src="../assets/facebook.svg" alt="Link to our Facebook page">
+      </a>
+      <a href="https://www.youtube.com/channel/UCI2hyKZ0ZfXDyXlp5ofDgzw" class="socialmedia youtube">
+        <img src="../assets/youtube.svg" alt="Link to our Youtube channel">
+      </a>
+    </div>
+  </div>
+  <div class="footer__footercontent">
+    <p class="footer__text">&copy; 2006-<span id="copyrightCurrentYear"></span>. Process Wastewater Technologies LLC. All rights reserved.</p>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const copyrightYear = new Date().getFullYear();
+    const copyrightYearSpan = document.getElementById('copyrightCurrentYear');
+    copyrightYearSpan.innerHTML = copyrightYear;
+  })()
+</script>

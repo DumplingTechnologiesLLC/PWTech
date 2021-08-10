@@ -18,8 +18,16 @@
     & > img {
       height: 52px;
       margin-bottom: .3em; /* Adjustment to align bottom of text in logo with rest of brand*/
+      @media screen and (max-width: 580px) {
+        margin-bottom: .5em; /* Adjustment to align bottom of text in logo with rest of brand*/
+      }
     }
     font-size: 26px;
+    @media screen and (max-width: 580px) {
+      /** We need to ensure there is enough space for the navbar button */
+      font-size: 20px;
+      
+    }
     color: $pw-text;
     text-decoration: none;
     &:hover, &:visited {
@@ -28,6 +36,10 @@
   }
 
   &__links {
+    @media screen and (max-width: 830px) {
+      /** At this width we use a toggleable navbar instead */
+      display: none;
+    }
     position: relative;
     background-color: $pw-purple;
     display: flex;
