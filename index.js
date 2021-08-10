@@ -3,6 +3,7 @@ const port = parseInt(process.env.PORT, 10) || 3000;
 const livereload = require("livereload");
 const connectLivereload = require("connect-livereload");
 const path = require('path');
+const fs = require('fs');
 
 
 /**
@@ -34,7 +35,10 @@ app.use(express.static('views'))
 
 
 app.get('/', function(req, res) {
-  res.render('pages/index');
+  const data = JSON.parse(fs.readFileSync('./products.json', {encoding:'utf8', flag:'r'}));
+  res.render('pages/index', {
+    products: data,
+  });
 });
 app.get('/about', function(req, res) {
   res.render('pages/index');

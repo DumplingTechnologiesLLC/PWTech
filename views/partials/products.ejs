@@ -1,3 +1,20 @@
 <section class="products">
-
+  <h2>Our <span class="accentedText">Products</span></h2>
+  <div class="products__container">
+    <% products.forEach(function(product) { %>
+      <div class="card">
+          <h3><%= product.title %></h3>
+          <a href="<%= product.endpoint %>">
+            <img src="../assets/<%= product.image %>" alt="<%= product.alt %>">
+          </a>
+          <button 
+            role="link"
+            onclick="history.pushState({}, '<%= product.title %>', '<%= product.endpoint %>')"
+            class="button button--primary-outline button--block"
+            >
+            See Product Details
+          </button>
+      </div>
+    <% }); %>
+  </div>
 </section>

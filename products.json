@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Volute Dewatering Press",
+    "image": "volute_dewatering_press.webp",
+    "alt": "Image of our Volute Dewatering Press",
+    "endpoint": "/volute_dewatering_press"
+  },
+  {
+    "title": "Raked Bar Screen",
+    "image": "raked_bar_screen.webp",
+    "alt": "Image of our Raked Bar Screen",
+    "endpoint": "/raked_bar_screen"
+  },
+  {
+    "title": "SANSEP",
+    "image": "SANSEP.webp",
+    "alt": "Image of our SANSEP",
+    "endpoint": "/sansep"
+  },
+  {
+    "title": "Tipping Bucket",
+    "image": "tipping_bucket.webp",
+    "alt": "Image of our Tipping Bucket",
+    "endpoint": "/tipping_bucket"
+  },
+  {
+    "title": "Volute Thickener",
+    "image": "volute_thickener.webp",
+    "alt": "Image of our Volute Thickener",
+    "endpoint": "/volute_thickener"
+  },
+  {
+    "title": "Cyclone",
+    "image": "cyclone.webp",
+    "alt": "Image of our Cyclone",
+    "endpoint": "/cyclone"
+  }
+]

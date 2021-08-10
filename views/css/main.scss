@@ -19,10 +19,16 @@ header {
 main {
   width: 100%;
   padding: 2em;
+  box-sizing: border-box;
+  margin: 0 auto;
   max-width: 1920px;
   flex: 1;
 }
 
+
+/**
+* Styles the landing page CTA section
+*/
 .aboveTheFold {
   position: relative;
   padding-bottom: 8em;
@@ -43,4 +49,47 @@ main {
   }
 
   border-bottom: 3px solid $pw-blue;
+}
+
+
+/**
+* Styles the Landing page product gallery
+*/
+.products {
+  padding-top: 1em;
+}
+
+.products__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-left: -$card-horizontal-clearance; /* To realign the cards with the left hand and right hand side*/
+  margin-right: -$card-horizontal-clearance; /* To realign the cards with the left hand and right hand side*/
+}
+
+.card {
+  border-radius: .25em;
+  box-shadow: 0px 2px 4px 4px rgba(0,0,0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  flex-direction: column;
+  border: 1px solid transparent;
+  margin: .5em $card-horizontal-clearance;
+  width: 300px;
+  & > a {
+    height: 200px;
+    margin-bottom: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & > a > img {
+    max-height: 200px;
+    max-width: 300px;
+  }
+  & > a {
+    text-decoration: none;
+  }
 }
