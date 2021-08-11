@@ -65,7 +65,7 @@
     "extraLinks": [
       {
         "text": "Download Product Flyer",
-        "link": "/path/to/file"
+        "link": "PWTechVoluteDewateringPress.pdf"
       },
       {
         "text": "View Product Animation",
@@ -130,7 +130,7 @@
     "extraLinks": [
       {
         "text": "Download Product Flyer",
-        "link": "/path/to/file"
+        "link": "raked.pdf"
       }
     ]
   },
@@ -189,7 +189,7 @@
     "extraLinks": [
       {
         "text": "Download Product Flyer",
-        "link": "/path/to/file"
+        "link": "sansep.pdf"
       },
       {
         "text": "View Product Animation",
@@ -318,7 +318,7 @@
     "extraLinks": [
       {
         "text": "Download Product Flyer",
-        "link": "/path/to/file"
+        "link": "PWTechVoluteThickener.pdf"
       }
     ]
   },
@@ -381,7 +381,7 @@
     "extraLinks": [
       {
         "text": "Download Product Flyer",
-        "link": "/path/to/file"
+        "link": "cyclone.pdf"
       }
     ]
   }
