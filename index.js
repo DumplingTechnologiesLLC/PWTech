@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
   });
 });
 app.get('/about', (req, res) => {
-  res.render('pages/index');
+  res.render('pages/about');
 });
 app.get('/terms_of_use', (req, res) => {
   res.render('pages/termsOfUse');
