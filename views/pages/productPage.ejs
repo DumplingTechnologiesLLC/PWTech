@@ -18,77 +18,77 @@
           <img src="../assets/<%= product.image %>" alt="<%= product.alt %>">
         </div>
         <div class="imageSection__textContainer">
-          <% product.contentOrdering.slice(0,2).forEach(function(section) { %>
+          <% (product?.contentOrdering ?? []).slice(0,2).forEach(function(section) { %>
             <h2 class="linedTitle">
               <%= section %>
             </h2>
             
             <!-- Content Iteration here -->
-            <% product.content[section].content.forEach(function(content) { %>
+            <% (product?.content?.[section]?.content ?? []).forEach(function(content) { %>
               <p><%= content %></p>
             <% }); %>
 
             <!-- If list is greater than 0, we begin a ul -->
-            <% if (product.content[section].list.length > 0) { %>
+            <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
               <ul>
             <% } %>
-            <% product.content[section].list.forEach(function(content) { %>
+            <% (product?.content?.[section]?.list ?? []).forEach(function(content) { %>
               <li><%= content %></li>
             <% }); %>
 
             <!-- If list is greater than 0, we conclude a ul -->
-            <% if (product.content[section].list.length > 0) { %>
+            <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
               </ul>
             <% } %>
 
             <!-- If orderedList is greater than 0, we begin a ol -->
-            <% if (product.content[section].orderedList.length > 0) { %>
+            <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
               <ol>
             <% } %>
-            <% product.content[section].orderedList.forEach(function(content) { %>
+            <% (product?.content?.[section]?.orderedList ?? []).forEach(function(content) { %>
               <li><%= content %></li>
             <% }); %>
 
             <!-- If orderedList is greater than 0, we conclude a ol -->
-            <% if (product.content[section].orderedList.length > 0) { %>
+            <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
             </ol>
             <% } %> 
           <% }); %>    
         </div>
       </section>
-      <% product.contentOrdering.slice(2).forEach(function(section) { %>
+      <% product?.contentOrdering.slice(2).forEach(function(section) { %>
         <h2 class="linedTitle">
           <%= section %>
         </h2>
         
         <!-- Content Iteration here -->
-        <% product.content[section].content.forEach(function(content) { %>
+        <% (product?.content?.[section]?.content ?? []).forEach(function(content) { %>
           <p><%= content %></p>
         <% }); %>
 
         <!-- If list is greater than 0, we begin a ul -->
-        <% if (product.content[section].list.length > 0) { %>
+        <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
           <ul>
         <% } %>
-        <% product.content[section].list.forEach(function(content) { %>
+        <% (product?.content?.[section]?.list ?? []).forEach(function(content) { %>
           <li><%= content %></li>
         <% }); %>
 
         <!-- If list is greater than 0, we conclude a ul -->
-        <% if (product.content[section].list.length > 0) { %>
+        <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
           </ul>
         <% } %>
 
         <!-- If orderedList is greater than 0, we begin a ol -->
-        <% if (product.content[section].orderedList.length > 0) { %>
+        <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
           <ol>
         <% } %>
-        <% product.content[section].orderedList.forEach(function(content) { %>
+        <% (product?.content?.[section]?.orderedList ?? []).forEach(function(content) { %>
           <li><%= content %></li>
         <% }); %>
 
         <!-- If orderedList is greater than 0, we conclude a ol -->
-        <% if (product.content[section].orderedList.length > 0) { %>
+        <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
         </ol>
         <% } %> 
       <% }); %>
@@ -96,7 +96,7 @@
         <button role="button" class="button button--primary">
           Contact PWTech Engineers for help with System Design
         </button>
-        <% product.extraLinks.forEach(function(link) { %>
+        <% (product?.extraLinks ?? []).forEach(function(link) { %>
           <a role="document" class="button button--primary-outline" href="<%= link.link %>">
             <%= link.text %>
           </a>

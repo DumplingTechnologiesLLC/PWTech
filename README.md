@@ -21,7 +21,14 @@ For Linux: https://linuxconfig.org/install-npm-on-linux/
 
 The easiest way to change the CSS is to edit the `*.scss` files in `views/css` while the development server is running.
 The sass compiler will watch those files and output the changes into `views/css` for development, and `public/css` for
-production.
+production. Then simply serve the new CSS files found in `public/css`
+
+
+### Changing Product Information
+
+The easiest way to change product information is to edit the `products.json` file then rebuild the project to receive
+new static files. You can add new products there, the only requirement is that the products follow the format already
+established.
 
 
 ## For Production
