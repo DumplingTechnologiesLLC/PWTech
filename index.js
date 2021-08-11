@@ -45,6 +45,9 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('pages/index');
 });
+app.get('/terms_of_use', (req, res) => {
+  res.render('pages/termsOfUse');
+});
 products.forEach((product) => {
   app.get(product.endpoint, (req, res) => {
     res.render('pages/productPage', {
