@@ -1,3 +1,5 @@
+@import './variables';
+
 .imageSection {
   display: flex;
   flex-wrap: wrap;
@@ -11,11 +13,34 @@
     min-width: 300px;
     max-height: 310px;
     & > img {
-      width: 100%;
-      
+      max-height: 100%;
+      max-width: 100%;
     }
   }
   & > .imageSection__textContainer {
     flex: 1;
+  }
+}
+
+.buttonSection {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: -$button-horizontal-clearance;
+  margin-right: -$button-horizontal-clearance;
+  @media screen and (max-width: 500px) {
+    button {
+      width: 100%;
+    }
+    a {
+      width: 100%;
+    }
+  }
+  button  {
+    margin: $button-horizontal-clearance;
+  }
+  a {
+    margin: $button-horizontal-clearance;
   }
 }

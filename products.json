@@ -100,7 +100,8 @@
           "Use of horizontally configured screens (as opposed to vertical screens) ensures that all flows, high or low, are screened with minimum velocities through the screen.",
           "The entire flow is in contact with the screen, so that the perpendicular flow path screens more efficiently.",
           "Horizontal orientation assures equal loading across the surface and thus symmetrical distribution of forces on the cleaning rakes. This minimizes jamming and breaking of comb tines."
-        ]
+        ],
+        "orderedList": []
       },
       "How It Works": {
         "content": [
@@ -118,10 +119,10 @@
           "Patented design features that distinguish the performance and reliability of the PWTech® Raked Bar Screen include:"
         ],
         "list": [
-          "- Recessed release zones at every 2 ft. of screen length",
-          "- Modular construction",
-          "- Single screen can handle flow rates from 3 to 100 mgd",
-          "- 3/16\", 1/4\", 5/16\", 3/8\" and 1/2\" bar spacings"
+          "Recessed release zones at every 2 ft. of screen length",
+          "Modular construction",
+          "Single screen can handle flow rates from 3 to 100 mgd",
+          "3/16\", 1/4\", 5/16\", 3/8\" and 1/2\" bar spacings"
         ],
         "orderedList": []
       }
@@ -299,7 +300,7 @@
           "Free water is discharged through the gaps in the thickening drum while solids are conveyed along the length of the drum and discharged at the opposite end."
         ]
       },
-      "Volute Dewatering Press vs Volue Thickener": {
+      "Volute Dewatering Press vs Volute Thickener": {
         "content": [
           "While both drums are the same size, the drum of the Volute Thickener is made entirely with plastic rings with a constant gap between the moving and fixed rings. The screw is a constant pitch, and there is no end plate. The drum's motor is less highly geared to allow for greater drum speeds. In addition, the piping connections are larger and the flocculation tank is larger to accommodate higher flows."
         ],
@@ -350,7 +351,7 @@
           "Simple, rapid installation",
           "Ideal for treating small combined sewer overflows"
         ],
-        "unorderedList": []
+        "orderedList": []
       },
       "How It Works": {
         "content": [],

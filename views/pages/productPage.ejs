@@ -92,6 +92,16 @@
         </ol>
         <% } %> 
       <% }); %>
+      <div class="buttonSection">
+        <button role="button" class="button button--primary">
+          Contact PWTech Engineers for help with System Design
+        </button>
+        <% product.extraLinks.forEach(function(link) { %>
+          <a role="document" class="button button--primary-outline" href="<%= link.link %>">
+            <%= link.text %>
+          </a>
+        <% }); %>
+      </div>
     </main>
 
     <footer>
