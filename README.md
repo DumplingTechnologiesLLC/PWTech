@@ -33,6 +33,13 @@ new static files. You can add new products there, the only requirement is that t
 established.
 
 
+### Changing Career Information
+
+The easiest way to change career information is to edit the `careers.js` file then rebuild the project to receive
+new static files. You can add new careers there, the only requirement is that the careers follow the format already
+established.
+
+
 ## For Production
 
 Once your changes are complete, you can run `npm run compile` to have all the templates compiled into the `public`
