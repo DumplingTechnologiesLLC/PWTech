@@ -18,19 +18,19 @@
           <img src="../assets/<%= product.image %>" alt="<%= product.alt %>">
         </div>
         <div class="imageSection__textContainer">
-          <% (product?.contentOrdering ?? []).slice(0,2).forEach(function(section) { %>
+          <% (product?.sectionOrdering ?? []).slice(0,2).forEach(function(section) { %>
             <h2 class="linedTitle">
               <%= section %>
             </h2>
-            <%- product?.content?.[section]?.html %>
+            <%- product?.section?.[section] %>
           <% }); %>    
         </div>
       </section>
-      <% product?.contentOrdering.slice(2).forEach(function(section) { %>
+      <% product?.sectionOrdering.slice(2).forEach(function(section) { %>
         <h2 class="linedTitle">
           <%= section %>
         </h2>
-        <%- product?.content?.[section]?.html %>
+        <%- product?.section?.[section] %>
       <% }); %>
       <div class="buttonSection">
         <button role="button" class="button button--primary">
