@@ -12,6 +12,9 @@ module.exports = {
   },
   rules: {
     'max-len': ['warn', 120, 2],
+    'import/extensions': ['error', 'ignorePackages', {
+      js: 'always',
+    }],
   },
   plugins: [
     'json-format',

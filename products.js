@@ -529,7 +529,7 @@ const Cyclone = {
   ],
 };
 
-const products = [
+export const products = [
   VoluteDewateringPress,
   RakedBarScreen,
   SanSep,
@@ -538,6 +538,4 @@ const products = [
   Cyclone,
 ];
 
-module.exports = {
-  products,
-};
+export default products;

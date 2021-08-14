@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="../css/careers.css">
+  </head>
+  <body class="container">
+
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+      <h1>Come <span class="accentedText">work</span> with us</h1>
+      <p>
+        A career with Process Wastewater Technologies is an opportunity to be involved with a leading manufacturer of 
+        products for the wastewater and CSO treatment industry that makes a difference in communities throughout the 
+        United States. We encourage you to review our website to get a feel for who we are, the type of work we do, 
+        our mission, and our values. PWTech is an Equal Opportunity/Affirmative Action Employer. Employment selection 
+        and related decisions are made without regard to sex, race, age, disability, religion, national origin, 
+        color, or any other protected class.
+      </p>
+
+      <section>
+        <div class="card card--block careers-card">
+          <h2>Available Careers</h2>
+          <div class="button-group">
+            <% careers.forEach(function(career) { %>
+              <a class="button button--secondary" href="#<%- career.title %>">
+                <%- career.title %>
+              </a>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+
+      <% careers.forEach(function(career, index) { %>
+        <section class="career-section">
+          <h3 id="<%- career.title %>">
+            <%- career.title %>
+          </h3>
+          <%- career.description %>
+          <% (career?.sectionOrdering ?? []).forEach(function(section) { %>
+            <h4> <%= section %> </h4>
+            <%- career?.sections?.[section] %>
+          <% }); %>
+          <div class="career-button">
+            <%- career.button %>
+          </div>
+        </section>
+        <% if (index != careers.length - 1) { %>
+          <hr>
+        <% } %>
+      <% }); %>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+
+  </body>
+</html>

@@ -2,9 +2,9 @@
  * Disabled because this is a development tool
  */
 /* eslint-disable import/no-extraneous-dependencies, no-console */
-const fs = require('fs');
-const ejs = require('ejs');
-const path = require('path');
+import fs from 'fs';
+import ejs from 'ejs';
+import path from 'path';
 
 (async () => {
   // Our starting point

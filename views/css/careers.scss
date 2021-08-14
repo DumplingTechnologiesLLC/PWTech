@@ -1,0 +1,26 @@
+@import './variables';
+.careers-card {
+  min-height: 100px;
+  & > h2 {
+    margin-bottom: .5em;
+  }
+}
+.career-section {
+  margin-top: 2em;
+  & > a {
+    display: inline-block;
+  }
+}
+.career-button-warning {
+  display: block;
+}
+h3 {
+  font-size: 22px;
+}
+hr {
+  margin: 2em 0 0 0;
+  background-color: $pw-blue;
+  height: 3px;
+  border: 0;
+
+}

@@ -76,13 +76,20 @@ main {
 .card {
   border-radius: .25em;
   box-shadow: 0px 2px 4px 4px rgba(0,0,0, 0.1);
+  padding: 1em;
+  border: 1px solid transparent;
+  width: 300px; 
+}
+.card--product {
+  margin: .5em $card-horizontal-clearance;
+}
+.card--block {
+  width: 100%;
+}
+.card--vertical {
   display: flex;
   align-items: center;
-  padding: 1em;
   flex-direction: column;
-  border: 1px solid transparent;
-  margin: .5em $card-horizontal-clearance;
-  width: 300px;
   & > a {
     height: 200px;
     margin-bottom: .5em;

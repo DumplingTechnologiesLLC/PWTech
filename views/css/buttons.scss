@@ -13,7 +13,7 @@
   }
   font-weight: bold;
   cursor: pointer;
-  transition: background-color .3s ease-out, color .3s ease-out;
+  transition: background-color .3s ease-out, color .3s ease-out, border-color .3s ease-out;
   &--large {
     padding: .55em 1.5em;
     font-size: 1.5em;
@@ -31,6 +31,19 @@
     color: white;
     &:hover {
       background-color: darken($pw-purple, 10deg);
+      border-color: darken($pw-purple, 10deg);
+    }
+  }
+  &--secondary {
+    &:visited {
+      color: black;
+    }
+    background-color: $pw-blue;
+    color: black;
+    border-color: $pw-blue;
+    &:hover {
+      border-color: darken($pw-blue, 10deg);
+      background-color: darken($pw-blue, 10deg);
     }
   }
   &--primary-outline {
@@ -49,4 +62,18 @@
 a.button {
   vertical-align: text-bottom;
   display: inline-block;
+}
+
+$button-margin: .25em;
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$button-margin;
+  a {
+    margin: $button-margin;
+  }
+  button {
+    margin: $button-margin;
+  }
 }

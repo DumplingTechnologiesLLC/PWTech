@@ -2,21 +2,25 @@
  * Disabled because this is a development tool
  */
 /* eslint-disable import/no-extraneous-dependencies, no-console */
-const express = require('express');
+import express from 'express';
+
+import livereload from 'livereload';
+import connectLivereload from 'connect-livereload';
+import path from 'path';
+import { products } from './products.js';
+import { careers } from './careers.js';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
-const livereload = require('livereload');
-const connectLivereload = require('connect-livereload');
-const path = require('path');
 
-const { products } = require('./products');
-/**
+const CurrentDir = path.resolve();
+
+/*
  * Live reload setup
  */
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch([
-  path.join(__dirname, 'views', 'pages'),
-  path.join(__dirname, 'views', 'partials'),
+  path.join(CurrentDir, 'views', 'pages'),
+  path.join(CurrentDir, 'views', 'partials'),
 ]);
 
 liveReloadServer.server.once('connection', () => {
@@ -41,12 +45,21 @@ app.get('/', (req, res) => {
     products,
   });
 });
+
 app.get('/about', (req, res) => {
   res.render('pages/about');
 });
+
+app.get('/careers', (req, res) => {
+  res.render('pages/careers', {
+    careers,
+  });
+});
+
 app.get('/terms_of_use', (req, res) => {
   res.render('pages/termsOfUse');
 });
+
 products.forEach((product) => {
   app.get(product.endpoint, (req, res) => {
     res.render('pages/productPage', {
