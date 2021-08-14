@@ -5,12 +5,14 @@ const DailyTasks = 'Daily Tasks';
 const KeyPerformanceIndicators = 'Key Performance Indicators';
 const Requirements = 'Requirements';
 
-const CareerConstructor = () => ({
-  title: '',
-  description: '',
-  sectionOrdering: [],
-  sections: {},
-  button: `
+const CareerConstructor = ({
+  title, description, sectionOrdering, sections, button,
+}) => ({
+  title: title ?? '',
+  description: description ?? '',
+  sectionOrdering: sectionOrdering ?? [],
+  sections: sections ?? {},
+  button: button ?? `
     <a class="button button--primary" href="mailto:kreal@pwtech.us">
       Apply with Resume and Cover Letter*
     </a>
@@ -20,9 +22,9 @@ const CareerConstructor = () => ({
   `,
 });
 
-const FieldServiceEngineer = CareerConstructor();
-FieldServiceEngineer.title = 'Field Service Engineer';
-FieldServiceEngineer.description = `
+const FieldServiceEngineer = CareerConstructor({
+  title: 'Field Service Engineer',
+  description: `
   <p>
     As a small and rapidly growing company, PWTech requires employees who are adaptable, flexible, hardworking and 
     motivated and who love the challenge of being an integral part of growing a business. This position is for a 
@@ -40,14 +42,14 @@ FieldServiceEngineer.description = `
     part of the hiring process to support occasional travel outside the United States. This job also involves working 
     predominantly in industrial or municipal water or wastewater treatment facilities when in the field.
   </p>
-`;
-FieldServiceEngineer.sectionOrdering = [
-  DailyTasks,
-  KeyPerformanceIndicators,
-  Requirements,
-];
-FieldServiceEngineer.sections = {
-  [DailyTasks]: `
+`,
+  sectionOrdering: [
+    DailyTasks,
+    KeyPerformanceIndicators,
+    Requirements,
+  ],
+  sections: {
+    [DailyTasks]: `
     <ul>
       <li>Running pilot tests, to include transporting pilot trailer to site, set up, and teardown of equipment</li>
       <li>Results analysis and report writing</li>
@@ -56,7 +58,7 @@ FieldServiceEngineer.sections = {
       <li>Communicating with and supervising field technicians to ensure a high quality of work</li>
     </ul>
   `,
-  [KeyPerformanceIndicators]: `
+    [KeyPerformanceIndicators]: `
     <p>
       The right applicant will find a very broad array of opportunities for career development beyond the role 
       described here.
@@ -83,7 +85,7 @@ FieldServiceEngineer.sections = {
       </li>
     </ul>
   `,
-  [Requirements]: `
+    [Requirements]: `
     <p>
       <strong>The following requirements are mandatory and MUST be addressed in a cover letter (no cover letter 
       as per this instruction = no response).</strong> Applicants that cannot demonstrate the following will not 
@@ -116,11 +118,12 @@ FieldServiceEngineer.sections = {
       <li>any experience with field/pilot testing, starting up, or commissioning equipment</li>
     </ul>
   `,
-};
+  },
+});
 
-const FieldServicesTechnician = CareerConstructor();
-FieldServicesTechnician.title = 'Field Services Technician';
-FieldServicesTechnician.description = `
+const FieldServicesTechnician = CareerConstructor({
+  title: 'Field Services Technician',
+  description: `
   <p>
     This role will ideally suit someone with a few years of experience as a treatment plant operator or OIT, or who 
     is getting started in the industry. Your primary role will be to provide operator support for our on-site 
@@ -132,14 +135,14 @@ FieldServicesTechnician.description = `
     each week. (Head out Monday, back Friday as a general rule). This job also involves working predominantly in 
     wastewater treatment facilities when in the field.
   </p>
-`;
-FieldServicesTechnician.sectionOrdering = [
-  DailyTasks,
-  KeyPerformanceIndicators,
-  Requirements,
-];
-FieldServicesTechnician.sections = {
-  [DailyTasks]: `
+`,
+  sectionOrdering: [
+    DailyTasks,
+    KeyPerformanceIndicators,
+    Requirements,
+  ],
+  sections: {
+    [DailyTasks]: `
     <ul>
       <li>
         Running pilot tests
@@ -155,7 +158,7 @@ FieldServicesTechnician.sections = {
       <li>Depending on skillset, you may be called upon to analyze your results and report on your findings</li>
     </ul>
   `,
-  [KeyPerformanceIndicators]: `
+    [KeyPerformanceIndicators]: `
     <ul>
       <li>
         Successful operation of equipment including necessary troubleshooting.
@@ -170,7 +173,7 @@ FieldServicesTechnician.sections = {
       </li>
     </ul>
   `,
-  [Requirements]: `
+    [Requirements]: `
     <p>
       <strong>The following requirements are mandatory and MUST be addressed in a cover letter (no cover letter 
       as per this instruction = no response).</strong>
@@ -195,11 +198,12 @@ FieldServicesTechnician.sections = {
       <li>Laboratory skills</li>
     </ul>
   `,
-};
+  },
+});
 
-const LocalIndependentSalesRepresentative = CareerConstructor();
-LocalIndependentSalesRepresentative.title = 'Local Independent Sales Representative';
-LocalIndependentSalesRepresentative.description = `
+const LocalIndependentSalesRepresentative = CareerConstructor({
+  title: 'Local Independent Sales Representative',
+  description: `
   <p>
     PWTech is interested in building relationships with local sales representatives throughout the United States 
     and Canada. If you service any of the following areas:
@@ -211,14 +215,15 @@ LocalIndependentSalesRepresentative.description = `
     <li>California</li>
   </ul>
   <p>Please reach out to us!</p>
-`;
-LocalIndependentSalesRepresentative.sectionOrdering = [];
-LocalIndependentSalesRepresentative.sections = {};
-LocalIndependentSalesRepresentative.button = `
+`,
+  sectionOrdering: [],
+  sections: {},
+  button: `
   <button class='button button--primary' onclick="${openContactForm.name}()">
     Contact Us
   </button>
-`;
+`,
+});
 
 export const careers = [
   FieldServiceEngineer,

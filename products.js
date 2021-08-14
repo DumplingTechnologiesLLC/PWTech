@@ -1,3 +1,15 @@
+const ProductConstructor = ({
+  title, image, alt, endpoint, sectionOrdering, section, extraLinks,
+}) => ({
+  title: title ?? '',
+  image: image ?? '',
+  alt: alt ?? '',
+  endpoint: endpoint ?? '',
+  sectionOrdering: sectionOrdering ?? [],
+  section: section ?? {},
+  extraLinks: extraLinks ?? [],
+});
+
 // titles
 
 const Description = 'Description';
@@ -11,7 +23,7 @@ const Construction = 'Construction';
 
 // products
 
-const VoluteDewateringPress = {
+const VoluteDewateringPress = ProductConstructor({
   title: 'Volute Dewatering Press',
   image: 'volute_dewatering_press.webp',
   alt: 'Image of our Volute Dewatering Press',
@@ -98,9 +110,9 @@ const VoluteDewateringPress = {
       link: '#',
     },
   ],
-};
+});
 
-const RakedBarScreen = {
+const RakedBarScreen = ProductConstructor({
   title: 'Raked Bar Screen',
   image: 'raked_bar_screen.webp',
   alt: 'Image of our Raked Bar Screen',
@@ -184,9 +196,9 @@ const RakedBarScreen = {
       link: 'raked.pdf',
     },
   ],
-};
+});
 
-const SanSep = {
+const SanSep = ProductConstructor({
   title: 'SANSEP',
   image: 'SANSEP.webp',
   alt: 'Image of our SANSEP',
@@ -271,9 +283,9 @@ const SanSep = {
       link: '#',
     },
   ],
-};
+});
 
-const TippingBucket = {
+const TippingBucket = ProductConstructor({
   title: 'Tipping Bucket',
   image: 'tipping_bucket.webp',
   alt: 'Image of our Tipping Bucket',
@@ -355,9 +367,9 @@ const TippingBucket = {
     DesignCriteria,
   ],
   extraLinks: [],
-};
+});
 
-const VoluteThickener = {
+const VoluteThickener = ProductConstructor({
   title: 'Volute Thickener',
   image: 'volute_thickener.webp',
   alt: 'Image of our Volute Thickener',
@@ -442,9 +454,9 @@ const VoluteThickener = {
       link: 'PWTechVoluteThickener.pdf',
     },
   ],
-};
+});
 
-const Cyclone = {
+const Cyclone = ProductConstructor({
   title: 'Cyclone',
   image: 'cyclone.webp',
   alt: 'Image of our Cyclone',
@@ -527,7 +539,7 @@ const Cyclone = {
       link: 'cyclone.pdf',
     },
   ],
-};
+});
 
 export const products = [
   VoluteDewateringPress,
