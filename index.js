@@ -8,9 +8,8 @@ const port = parseInt(process.env.PORT, 10) || 3000;
 const livereload = require('livereload');
 const connectLivereload = require('connect-livereload');
 const path = require('path');
-const fs = require('fs');
 
-const products = JSON.parse(fs.readFileSync('./products.json', { encoding: 'utf8', flag: 'r' }));
+const { products } = require('./products');
 /**
  * Live reload setup
  */

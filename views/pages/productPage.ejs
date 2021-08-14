@@ -22,37 +22,7 @@
             <h2 class="linedTitle">
               <%= section %>
             </h2>
-            
-            <!-- Content Iteration here -->
-            <% (product?.content?.[section]?.content ?? []).forEach(function(content) { %>
-              <p><%= content %></p>
-            <% }); %>
-
-            <!-- If list is greater than 0, we begin a ul -->
-            <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
-              <ul>
-            <% } %>
-            <% (product?.content?.[section]?.list ?? []).forEach(function(content) { %>
-              <li><%= content %></li>
-            <% }); %>
-
-            <!-- If list is greater than 0, we conclude a ul -->
-            <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
-              </ul>
-            <% } %>
-
-            <!-- If orderedList is greater than 0, we begin a ol -->
-            <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
-              <ol>
-            <% } %>
-            <% (product?.content?.[section]?.orderedList ?? []).forEach(function(content) { %>
-              <li><%= content %></li>
-            <% }); %>
-
-            <!-- If orderedList is greater than 0, we conclude a ol -->
-            <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
-            </ol>
-            <% } %> 
+            <%- product?.content?.[section]?.html %>
           <% }); %>    
         </div>
       </section>
@@ -60,37 +30,7 @@
         <h2 class="linedTitle">
           <%= section %>
         </h2>
-        
-        <!-- Content Iteration here -->
-        <% (product?.content?.[section]?.content ?? []).forEach(function(content) { %>
-          <p><%= content %></p>
-        <% }); %>
-
-        <!-- If list is greater than 0, we begin a ul -->
-        <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
-          <ul>
-        <% } %>
-        <% (product?.content?.[section]?.list ?? []).forEach(function(content) { %>
-          <li><%= content %></li>
-        <% }); %>
-
-        <!-- If list is greater than 0, we conclude a ul -->
-        <% if ((product?.content?.[section]?.list ?? []).length > 0) { %>
-          </ul>
-        <% } %>
-
-        <!-- If orderedList is greater than 0, we begin a ol -->
-        <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
-          <ol>
-        <% } %>
-        <% (product?.content?.[section]?.orderedList ?? []).forEach(function(content) { %>
-          <li><%= content %></li>
-        <% }); %>
-
-        <!-- If orderedList is greater than 0, we conclude a ol -->
-        <% if ((product?.content?.[section]?.orderedList ?? []).length > 0) { %>
-        </ol>
-        <% } %> 
+        <%- product?.content?.[section]?.html %>
       <% }); %>
       <div class="buttonSection">
         <button role="button" class="button button--primary">
