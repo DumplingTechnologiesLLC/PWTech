@@ -1,5 +1,6 @@
 @import "./variables";
-
+$navbar-collapse-width: 580px;
+$navbar-hide-links-width: 830px;
 .navbar {
   height: 60px;
   box-sizing: border-box;
@@ -18,15 +19,15 @@
     & > img {
       height: 52px;
       margin-bottom: .3em; /* Adjustment to align bottom of text in logo with rest of brand*/
-      @media screen and (max-width: 580px) {
+      @media screen and (max-width: $navbar-collapse-width) {
         margin-bottom: .5em; /* Adjustment to align bottom of text in logo with rest of brand*/
       }
     }
     font-size: 26px;
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: $navbar-collapse-width) {
       /** We need to ensure there is enough space for the navbar button */
       font-size: 20px;
-      
+      max-width: 270px;
     }
     color: $pw-text;
     text-decoration: none;
@@ -36,7 +37,7 @@
   }
 
   &__links {
-    @media screen and (max-width: 830px) {
+    @media screen and (max-width: $navbar-hide-links-width) {
       /** At this width we use a toggleable navbar instead */
       display: none;
     }
