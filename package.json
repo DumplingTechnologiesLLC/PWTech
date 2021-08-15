@@ -11,6 +11,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "node compiler.js",
+    "generate-sitemap": "node sitemapGenerator.js",
     "start": "concurrently --kill-others \"nodemon --ext ejs,js,pug --ignore public\" \"npm run watch:scss\"",
     "watch:scss": "sass --watch views/css:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +20,7 @@
     "ejs": "^3.1.6"
   },
   "devDependencies": {
+    "chalk": "^4.1.2",
     "concurrently": "^6.2.1",
     "connect-livereload": "^0.6.1",
     "eslint": "^7.8.0",
@@ -29,6 +31,8 @@
     "express-hbs": "^2.4.0",
     "livereload": "^0.9.3",
     "nodemon": "^2.0.12",
-    "sass": "^1.37.5"
+    "prompt": "^1.1.0",
+    "sass": "^1.37.5",
+    "xml2js": "^0.4.23"
   }
 }
