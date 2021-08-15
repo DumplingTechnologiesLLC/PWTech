@@ -1,4 +1,5 @@
 const closePanel = (panel) => {
+  panel.style.zIndex = 0;
   panel.style.maxHeight = '0px';
   panel.style.boxShadow = null;
   panel.style.paddingTop = null;
@@ -14,6 +15,7 @@ const openPanel = (panel) => {
       document.body.scrollHeight - panel.getBoundingClientRect().bottom - additionalPadding
     );
     const scrollHeightWithPadding = panel.scrollHeight + additionalPadding;
+    panel.style.zIndex = 1;
     panel.style.maxHeight = `${Math.min(remainingDistanceToBottomOfPage, scrollHeightWithPadding)}px`;
     panel.style.boxShadow = '0px 2px 2px 2px rgba(0,0,0, 0.1)';
     panel.style.paddingTop = '1em';

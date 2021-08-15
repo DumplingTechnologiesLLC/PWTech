@@ -25,9 +25,14 @@
   display: flex;
   flex-direction: column;
 }
-.flyers, .drawings {
+.flyers, .animations, .drawings {
   h2 {
-    margin-bottom: .5em;
+    margin: .5em 0;
+  }
+}
+.animations {
+  p {
+    margin-top: 0;
   }
 }
 
@@ -66,16 +71,19 @@ $video-margin: .5em;
   &__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    @media screen and (max-width: $mobile-screen) {
+      justify-content: center;
+    }
     margin: -$video-margin;
     margin-top: 1em;
     .video {
       box-sizing: border-box;
-      @media screen and (max-width: 501px) {
+      @media screen and (max-width: 509px) {
         padding: 1.5em;
       }
       margin: $video-margin;
-      max-width: 500px;
+      max-width: 650px;
       min-width: 500px;
       flex: 1;
       video {
