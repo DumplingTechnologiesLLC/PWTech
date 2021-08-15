@@ -1,11 +1,17 @@
-const DownloadConstructor = ({ flyers, animations, drawings }) => ({
+const DownloadConstructor = ({ flyers, animations, drawings, videos }) => ({
   flyers: flyers ?? [],
   animations: animations ?? [],
   drawings: drawings ?? [],
+  videos: videos ?? []
 });
 
 const LinkConstructor = ({ title, link }) => ({
   title: title ?? 'Untitled Flyer',
+  link: link ?? '#',
+});
+
+const VideoConstructor = ({ description, link }) => ({
+  description: description ?? '',
   link: link ?? '#',
 });
 
@@ -124,37 +130,67 @@ export const downloads = DownloadConstructor({
       title: 'Volute Thickener Models',
       links: [
         {
-          title: `VT-201
-          `,
+          title: 'VT-201',
           link: 'PWTECH-VOLUTE-THICKENER-VT201-GA.pdf',
         },
         {
-          title: `VT-202
-          `,
+          title: 'VT-202',
           link: 'PWTECH-VOLUTE-THICKENER-VT202-GA.pdf',
         },
         {
-          title: `VT-301
-          `,
+          title: 'VT-301',
           link: 'PWTECH-VOLUTE-THICKENER-VT301-GA.pdf',
         },
         {
-          title: `VT-302
-          `,
+          title: 'VT-302',
           link: 'PWTECH-VOLUTE-THICKENER-VT302-GA.pdf',
         },
         {
-          title: `VT-303
-          `,
+          title: 'VT-303',
           link: 'PWTECH-VOLUTE-THICKENER-VT303-GA.pdf',
         },
         {
-          title: `VT-304
-          `,
+          title: 'VT-304',
           link: 'PWTECH-VOLUTE-THICKENER-VT304-GA.pdf',
         },
       ],
     },
+  ],
+  videos: [
+    VideoConstructor({
+      link: 'PWTech-Volute-ES201-high-FOG-sludge.mp4',
+      description: `Cake solids from this ES-201 Volute contain 50% FOG. Despite the grease and oil, it ran with zero 
+      wash water for four months!`,
+    }),
+    VideoConstructor({
+      link: 'PWTech-Volute-ES302-cake-solids.mp4',
+      description: `PWTech's ES-302 Volute can run at up to 70 GPM. Clean filtrate drops out of the dewatering drum 
+      while cake is discharged from the end.`,
+    }),
+    VideoConstructor({
+      link: 'PWTech-Volute-ES302-clean-filtrate.mp4',
+      description: 'PWTech\'s ES-302 uses two drums for twice the throughput of the ES-301.',
+    }),
+    VideoConstructor({
+      link: 'PWTech-Volute-ES302-clean-filtrate.mp4',
+      description: 'PWTech\'s ES-302 uses two drums for twice the throughput of the ES-301.',
+    }),
+    VideoConstructor({
+      link: 'PWTech-Volute-ES353[2]-dewatering-press-filtrate.mp4',
+      description: `This ES-353[2] Volute in a food processing industrial application automatically runs at 80-130 GPM 
+      depending on the amount of feed solids. An open dewatering drum slot in the center allows for future expansion.`,
+    }),
+    VideoConstructor({
+      link: 'PWTech-VT302-Volute-thickener.mp4',
+      description: `PWTech's Volute presses frequently ship with conveyors and pumps controlled from the same 
+      touchscreen. The press automatically starts and stops the connected equipment. Dry cake solids from the Volute 
+      press are discharged from this conveyor before disposal.`,
+    }),
+    VideoConstructor({
+      link: 'Volute-dewatering-press-cake.mp4',
+      description: `PWTech's Volute Thickeners are rated for up to 150 GPM per thickening drum. This two drum model 
+      rated for 300 GPM is able to run at close to 500 GPM on thickened raw wastewater.`,
+    }),
   ],
 });
 

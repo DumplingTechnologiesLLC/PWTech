@@ -31,18 +31,19 @@
   }
 }
 
-.accordion-container {
+.accordion {
   position: relative;
   width: 100%;
   & + & {
     margin-top: 1em;
   }
 }
-.accordion-menu {
+.accordion__menu {
   & p {
     margin: .5em 0;
   }
   padding: 0 1em;
+  margin-top: .5em;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -56,4 +57,30 @@
   transition: max-height 0.2s ease-out;
   z-index: 1;
   overflow: hidden;
+}
+
+$video-margin: .5em;
+
+.videos {
+  margin-top: 1em;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -$video-margin;
+    margin-top: 1em;
+    .video {
+      box-sizing: border-box;
+      @media screen and (max-width: 501px) {
+        padding: 1.5em;
+      }
+      margin: $video-margin;
+      max-width: 500px;
+      min-width: 500px;
+      flex: 1;
+      video {
+        border-bottom: 1px solid transparent; // needed to fix a rendering glitch
+      }
+    }
+  }
 }

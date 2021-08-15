@@ -8,7 +8,7 @@ For Linux:
 - https://linuxconfig.org/install-npm-on-linux/
 - https://nodejs.org/en/download/package-manager/
 
-# Setup
+# Setup and Use
 
 1. Download this project
 2. Run `npm install`
@@ -39,12 +39,74 @@ The easiest way to change career information is to edit the `careers.js` file th
 new static files. You can add new careers there, the only requirement is that the careers follow the format already
 established.
 
+### Changing Downloads Page
+
+The easiest way to change downloads is to edit the `downloads.js` file then rebuild the project to receive new static
+files. 
+
+#### Adding flyers
+
+You can use the `LinkConstructor` to add additional files. Just add a title for the link and the name of the file.
+The downloads page will attempt to find the file in `assets/flyers`.
+
+#### Adding animations
+
+You can use the `LinkConstructor` to add additional files. Just add a title for the link and the name of the file.
+The downloads page will attempt to find the file in `assets/animations`.
+
+### Adding videos
+
+You can use the `VideoConstructor` to add additional files. Just add a description for the video if necessary and
+the name of the file. The downlaods page will attempt to find the file in `assets/videos`.
+
+#### Adding drawings
+
+THe downloads page will attempt to find the files you define in `assets/drawings`.
+
+Drawings can be in two formats. 
+
+1. If you just have a model with a list of drawings, it is recommended you add your drawings in the format
+
+```js
+{
+  title: 'The Name of Your Product',
+  links: [
+    {
+      title: 'The name of the drawing',
+      link: 'TheFile.pdf',
+    }
+  ]
+}
+```
+
+2. If you have a model with nested lists of drawings, it is recommended you add your drawings in the format
+
+```js
+{
+  title: 'The Name of your product',
+  links: [
+    {
+      title: 'The name of the subsection',
+      links: [
+        {
+          title: 'The name of your file',
+          link: 'TheFile.pdf',
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### Updating Sitemap
 
 The easiest way to update the sitemap is to run `npm run generate-sitemap` which will start up a generator that will
 review the list of products you've created, and generate a new sitemap after asking you when was the last time
 a product was updated (by default it will attempt to read the existing sitemap in `views/assets/sitemap.xml` to grab
 the previous values.)
+
+
+#### Modifying Sitemap configuration
 
 By default, the Sitemap prioritizes product pages a 0.5 priority for crawlers, the home page at 1.0 priority, and 
 the other pages (such as about, careers, terms of use) at 0.3. You can change this by modifying the `priorityLookup`

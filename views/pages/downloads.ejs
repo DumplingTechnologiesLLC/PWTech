@@ -35,11 +35,11 @@
         <div class="files__section drawings">
           <h2>Product Drawings</h2>
           <% downloads.drawings.forEach(function(drawing, index) { %>
-            <div class="accordion-container">
+            <div class="accordion">
               <button class="button button--secondary-outline button--block" onclick="handleAccordionClick(this)">
                 <%- drawing.title %>
               </button>
-              <div class="accordion-menu" data-toggled="false" style="max-height: 0px;">
+              <div class="accordion__menu" data-toggled="false" style="max-height: 0px;">
                 <% drawing.links.forEach(function(link) { %>
                   <% if (link.links === undefined) { %>
                     <a href="../assets/drawings/<%- link.link %>" target="_blank"><%- link.title %></a>
@@ -55,6 +55,25 @@
           <% }); %>
           <% if (downloads.drawings.length === 0) { %>
             <p>No drawings to display</p>
+          <% } %>
+        </div>
+      </section>
+      <section class="videos">
+        <h2>Product Videos</h2>
+        <div class="videos__container">
+          <% downloads.videos.forEach(function(video, index) { %>
+            <div class="video">
+              <video width="100%" height="300" controls>
+                <source src="../assets/videos/<%- video.link%>" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <p>
+                <%- video.description %>
+              </p>
+            </div>
+          <% }); %>
+          <% if (downloads.videos.length === 0) { %>
+            <p>No videos to display</p>
           <% } %>
         </div>
       </section>
