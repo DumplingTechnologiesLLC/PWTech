@@ -25,6 +25,11 @@
   display: flex;
   flex-direction: column;
 }
+.flyers, .drawings {
+  h2 {
+    margin-bottom: .5em;
+  }
+}
 
 .accordion-container {
   position: relative;
