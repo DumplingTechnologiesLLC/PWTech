@@ -46,6 +46,18 @@
       background-color: darken($pw-blue, 10deg);
     }
   }
+  &--secondary-outline {
+    &:visited {
+      color: black;
+    }
+    background-color:white;
+    color: black;
+    border-color: $pw-blue;
+    &:hover {
+      border-color: $pw-blue;
+      background-color: $pw-blue;
+    }
+  }
   &--primary-outline {
     background-color: white;
     border-color: $pw-purple;

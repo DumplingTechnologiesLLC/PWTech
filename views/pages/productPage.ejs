@@ -37,7 +37,11 @@
           Contact PWTech Engineers for help with System Design
         </button>
         <% (product?.extraLinks ?? []).forEach(function(link) { %>
-          <a role="document" class="button button--primary-outline" href="../assets/<%= link.link %>" target="_blank">
+          <a 
+            role="document" 
+            class="button button--primary-outline" 
+            href="../assets/flyers/<%= link.link %>" 
+            target="_blank">
             <%= link.text %>
           </a>
         <% }); %>

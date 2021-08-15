@@ -9,6 +9,7 @@ import connectLivereload from 'connect-livereload';
 import path from 'path';
 import { products } from './products.js';
 import { careers } from './careers.js';
+import { downloads } from './downloads.js';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 
@@ -53,6 +54,12 @@ app.get('/about', (req, res) => {
 app.get('/careers', (req, res) => {
   res.render('pages/careers', {
     careers,
+  });
+});
+
+app.get('/downloads', (req, res) => {
+  res.render('pages/downloads', {
+    downloads,
   });
 });
 

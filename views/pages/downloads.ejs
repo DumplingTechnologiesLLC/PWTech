@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="../css/downloads.css">
+    <script src="../assets/scripts/downloads.js" async></script>
+  </head>
+  <body class="container">
+
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+      <h1>Downloads</h1>
+      <section class="files">
+        <div class="files__section flyers">
+          <h2>Product Flyers</h2>
+          <% downloads.flyers.forEach(function(flyer, index) { %>
+            <a href="../assets/flyers/<%- flyer.link %>" target="_blank"><%- flyer.title %></a>
+          <% }); %>
+          <% if (downloads.flyers.length === 0) { %>
+            <p>No flyers to display</p>
+          <% } %>
+        </div>
+        <div class="files__section flyers">
+          <h2>Product Animations</h2>
+          <% downloads.animations.forEach(function(animation, index) { %>
+            <a href="../assets/animations/<%- animation.link %>" target="_blank"><%- animation.title %></a>
+          <% }); %>
+          <% if (downloads.animations.length === 0) { %>
+            <p>No animations to display</p>
+          <% } %>
+        </div>
+        <div class="files__section drawings">
+          <h2>Product Drawings</h2>
+          <% downloads.drawings.forEach(function(drawing, index) { %>
+            <div class="accordion-container">
+              <button class="button button--secondary-outline button--block" onclick="handleAccordionClick(this)">
+                <%- drawing.title %>
+              </button>
+              <div class="accordion-menu" data-toggled="false" style="max-height: 0px;">
+                <% drawing.links.forEach(function(link) { %>
+                  <% if (link.links === undefined) { %>
+                    <a href="../assets/drawings/<%- link.link %>" target="_blank"><%- link.title %></a>
+                  <% } else { %>
+                    <%- link.title %>
+                    <% link.links.forEach(function(innerLink) { %>
+                      <a href="../assets/drawings/<%- innerLink.link %>" target="_blank"><%- innerLink.title %></a>
+                    <% }) %>
+                  <% } %>
+                <% }) %>
+              </div>
+            </div>
+          <% }); %>
+          <% if (downloads.drawings.length === 0) { %>
+            <p>No drawings to display</p>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+
+  </body>
+</html>

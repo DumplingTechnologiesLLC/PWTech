@@ -1,0 +1,54 @@
+@import './variables';
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  a {
+    color: $pw-purple;
+    font-size: 1em;
+    margin: .5em 0;
+    width: 1%;
+    white-space: nowrap;
+    font-weight: bold;
+    text-decoration: none;
+    &:visited {
+      color: $pw-purple;
+    }
+  }
+}
+.files__section {
+  min-width: 300px;
+  flex: 1;
+}
+.flyers, .animations, .drawings {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-container {
+  position: relative;
+  width: 100%;
+  & + & {
+    margin-top: 1em;
+  }
+}
+.accordion-menu {
+  & p {
+    margin: .5em 0;
+  }
+  padding: 0 1em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: 100%;
+  background-color: white;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  z-index: 1;
+  overflow: hidden;
+}
