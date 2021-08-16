@@ -21,3 +21,7 @@ $button-horizontal-clearance: .5em;
 $maximum-content-width: 1920px;
 
 $mobile-screen: 500px;
+
+$contactPageZIndex: 2;
+$navbarBackdropZIndex: $contactPageZIndex + 1;
+$navbarZIndex: $navbarBackdropZIndex + 1;

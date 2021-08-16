@@ -9,7 +9,10 @@ $navbar-hide-links-width: 830px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-
+  @media screen and (max-width: $navbar-hide-links-width) {
+    /** We need to ensure there is enough space for the navbar button */
+    align-items: center;
+  }
   /**
   * The navbar brand and image
   */
@@ -28,6 +31,7 @@ $navbar-hide-links-width: 830px;
       /** We need to ensure there is enough space for the navbar button */
       font-size: 20px;
       max-width: 270px;
+      align-items: center;
     }
     color: $pw-text;
     text-decoration: none;
@@ -73,5 +77,106 @@ $navbar-hide-links-width: 830px;
       position:absolute;
       right: 100%;
     }
+  }
+}
+$navbar-toggler-dimension: 35px;
+.navbarToggler {
+  &--collapsed {
+    float: right;
+  }
+  &--uncollapsed {
+    display: none;
+    @media screen and (max-width: $navbar-hide-links-width) {
+      display: inline-block;
+      margin-right: .5em;
+    }
+  }
+  background-color: transparent;
+  color: $pw-purple;
+  height: $navbar-toggler-dimension;
+  width: $navbar-toggler-dimension;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $pw-purple;
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color .15s ease-out, color .15s ease-out;
+  &:hover, &:focus {
+    background-color: $pw-purple;
+    color: white;
+  }
+}
+
+.collapsedNavbarBackdrop {
+  z-index: $navbarBackdropZIndex;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  transition: opacity .3s ease-out;
+  background-color: rgba(0,0,0, 0.2);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  display: none;
+  &--opened {
+    opacity: 1;
+  }
+  
+}
+$widthOfNavbar: 300px;
+.collapsedNavbar {
+  z-index: $navbarZIndex;
+  background-color: white;
+  position: fixed;
+  width: $widthOfNavbar;
+  right: 0;
+  padding: 1em;
+  box-sizing: border-box;
+  top: 0;
+  height: 100vh;
+  transform: translateX($widthOfNavbar);
+  border-left: 3px solid $pw-purple;
+  transition: transform .3s ease-out;
+  box-shadow: -2px 0px 4px 4px rgba(0,0,0, 0.1);
+  &__links {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    flex-direction: column;
+    &__item {
+      padding: 1em;
+
+      &__link {
+        text-decoration: none;
+        color: $pw-purple;
+        font-weight: bold;
+        position: relative;
+        &::after {
+          content: ' ';
+          background-color: $pw-blue;
+          height: 2px;
+          position: absolute;
+          top: calc(100% + 3px);
+          left: 0;
+          width: 0;
+          transition: width .15s ease-out;
+        }
+        &:hover, &:focus {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &--opened {
+    transform: translateX(0);
   }
 }

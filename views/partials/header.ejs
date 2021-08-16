@@ -20,4 +20,31 @@
       <a class="navbar__links__item__link" href="/careers">Careers</a>
     </li>
   </ul>
+  <button onclick="toggleNavbar()" title="open navbar" class="navbarToggler navbarToggler--uncollapsed">
+    &#9776;
+  </button>
 </nav>
+
+<div onclick="toggleNavbar()" id="navbarBackdrop"  style="display: none" class="collapsedNavbarBackdrop"></div>
+<div id="collapsedNavbar" style="display: none"  class="collapsedNavbar">
+  <button onclick="toggleNavbar()" title="collapse navbar" class="navbarToggler navbarToggler--collapsed">
+    &#9776;
+  </button>
+  <ul class="collapsedNavbar__links">
+    <li class="collapsedNavbar__links__item">
+      <a class="collapsedNavbar__links__item__link" href="/#products">Products</a>
+    </li>
+    <li class="collapsedNavbar__links__item">
+      <a class="collapsedNavbar__links__item__link" href="/about">About</a>
+    </li>
+    <li class="collapsedNavbar__links__item">
+      <a class="collapsedNavbar__links__item__link" href="#" role="button">Contact Us</a>
+    </li>
+    <li class="collapsedNavbar__links__item">
+      <a class="collapsedNavbar__links__item__link" href="/downloads">Downloads</a>
+    </li>
+    <li class="collapsedNavbar__links__item">
+      <a class="collapsedNavbar__links__item__link" href="/careers">Careers</a>
+    </li>
+  </ul>
+</div>

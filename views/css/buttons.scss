@@ -29,7 +29,7 @@
     background-color: $pw-purple;
     border-color: $pw-purple;
     color: white;
-    &:hover {
+    &:hover, &:focus {
       background-color: darken($pw-purple, 10deg);
       border-color: darken($pw-purple, 10deg);
     }
@@ -41,7 +41,7 @@
     background-color: $pw-blue;
     color: black;
     border-color: $pw-blue;
-    &:hover {
+    &:hover, &:focus {
       border-color: darken($pw-blue, 10deg);
       background-color: darken($pw-blue, 10deg);
     }
@@ -53,7 +53,7 @@
     background-color:white;
     color: black;
     border-color: $pw-blue;
-    &:hover {
+    &:hover, &:focus {
       border-color: $pw-blue;
       background-color: $pw-blue;
     }
@@ -65,7 +65,7 @@
     &:visited {
       color: $pw-purple;
     }
-    &:hover {
+    &:hover, &:focus {
       background-color: $pw-purple;
       color: white;
     }
