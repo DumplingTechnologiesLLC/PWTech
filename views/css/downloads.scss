@@ -82,11 +82,17 @@ $video-margin: .5em;
       @media screen and (max-width: 509px) {
         padding: 1.5em;
       }
+      
       margin: $video-margin;
       max-width: 608px;
       min-width: 500px;
+      @media screen and (max-width: $mobile-screen) {
+        max-width: calc(100vw - 2em);
+        min-width: calc(100vw - 2em);
+      }
       flex: 1;
       video {
+        background-color: $pw-gray;
         border-bottom: 1px solid transparent; // needed to fix a rendering glitch
       }
     }

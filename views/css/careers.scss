@@ -1,6 +1,12 @@
 @import './variables';
 .careers-card {
   min-height: 100px;
+  box-sizing: border-box;
+  @media screen and (max-width: $mobile-screen) {
+    a {
+      width: 100%;
+    }
+  }
   & > h2 {
     margin-bottom: .5em;
   }

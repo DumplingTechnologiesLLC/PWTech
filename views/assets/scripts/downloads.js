@@ -1,3 +1,4 @@
+
 const closePanel = (panel) => {
   panel.style.zIndex = 0;
   panel.style.maxHeight = '0px';
