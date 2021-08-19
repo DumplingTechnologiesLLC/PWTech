@@ -27,7 +27,7 @@ $navbar-hide-links-width: 830px;
       }
     }
     font-size: 26px;
-    @media screen and (max-width: $navbar-collapse-width) {
+    @media screen and (max-width: 1010px) {
       /** We need to ensure there is enough space for the navbar button */
       font-size: 20px;
       max-width: 270px;

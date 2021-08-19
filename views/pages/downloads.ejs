@@ -36,7 +36,7 @@
           <h2>Product Drawings</h2>
           <% downloads.drawings.forEach(function(drawing, index) { %>
             <div class="accordion">
-              <button class="button button--secondary-outline button--block" onclick="handleAccordionClick(this)">
+              <button class="button button--secondary-outline button--block" data-accordion="true">
                 <%- drawing.title %>
               </button>
               <div class="accordion__menu" data-toggled="false" style="max-height: 0px;">

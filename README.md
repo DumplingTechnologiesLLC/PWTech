@@ -19,6 +19,11 @@ For Linux:
 1. Run `npm run start` and open a browser to `http://localhost:3000` to see the static frontend
 2. You can now make changes and the server will hot-reload the changes.
 
+### Adding buttons that open the contact form
+
+The `views/assets/scripts/contact.js` file creates an event listener for any `button` or `a` with `data-contact="true"` 
+as an attribute that will open the contact form on click. This is the easiest way to add additional contact forms.
+
 ### Changing CSS
 
 The easiest way to change the CSS is to edit the `*.scss` files in `views/css` while the development server is running.
@@ -97,6 +102,11 @@ Drawings can be in two formats.
   ]
 }
 ```
+
+### Updating Contact Form
+
+In order to update regional contacts, the easiest way is to edit the `contactData.js` arrays for
+`US_STATES` and `CAN_PROVINCES`. This controls the contact form in the modal.
 
 ### Updating Sitemap
 

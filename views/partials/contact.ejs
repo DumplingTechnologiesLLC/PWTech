@@ -1,4 +1,20 @@
-<div class="contactModalContainer">
-  <div class="contactModal"></div>
+<div class="contactModalContainer" id="modalContainer" style="display: none">
+  <div class="contactModal contactModal--closed" id="modal">
+    <div class="contactModal__header">
+      <h2>Contact <span class="accentedText">Us</span></h2>
+    </div>
+    <div class="contactModal__content">
+      <%- include('./localReps'); %>
+    </div>
+    <div class="contactModal__footer">
+      <button class="button button--secondary-outline" data-contact="false">Close</button>
+    </div>
+  </div>
+  <div data-contact="false" class="contactModalBackdrop">
+  </div>
 </div>
-<div class="contactModalBackdrop"></div>
+<script>
+  window.USA = "<%- contact.USA %>";
+  window.CAN = "<%- contact.CAN %>";
+  window.REP_LOOKUP = <%- JSON.stringify(contact.REP_LOOKUP, null, 2) %>;
+</script>

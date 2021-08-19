@@ -1,5 +1,4 @@
 // Titles
-import { openContactForm } from './contactUs.js';
 
 const DailyTasks = 'Daily Tasks';
 const KeyPerformanceIndicators = 'Key Performance Indicators';
@@ -219,7 +218,7 @@ const LocalIndependentSalesRepresentative = CareerConstructor({
   sectionOrdering: [],
   sections: {},
   button: `
-  <button class='button button--primary' onclick="${openContactForm.name}()">
+  <button class='button button--primary' data-contact="true">
     Contact Us
   </button>
 `,

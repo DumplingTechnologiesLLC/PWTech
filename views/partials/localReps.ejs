@@ -1,0 +1,29 @@
+<div id="localRepsForm">
+  <p class="contactModal__paragraph--sectionTitle">Find a local representative</p>
+  <label for="countrySelect">Country</label>
+  <select id="countrySelect">
+    <% contact.COUNTRIES.forEach(function(country) { %>
+      <option value="<%- country.value %>"><%- country.text %></option>
+    <% }); %>
+  </select>
+
+  <label id="stateSelectLabel" for="stateSelect">State or Territory</label>
+  <select id="stateSelect">
+    <% contact.US_STATES.forEach(function(state) { %>
+      <option value="<%- state.value %>"><%- state.text %></option>
+    <% }); %>
+  </select>
+
+  <label style="display: none" id="provinceSelectLabel" for="provinceSelect">Province</label>
+  <select style="display: none" id="provinceSelect">
+    <% contact.CAN_PROVINCES.forEach(function(province) { %>
+      <option value="<%- province.value %>"><%- province.text %></option>
+    <% }); %>
+  </select>
+  <section class="contactModal__repData" id="repSection">
+  </section>
+  <hr>
+  <button class="button button--primary-outline button--block">
+    Contact us directly
+  </button>
+</div>
