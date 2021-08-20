@@ -67,6 +67,7 @@ const Generator = async () => {
     properties: {
       [QuestionPromptGenerator('/')]: QuestionConstructor(locMap['/'] ?? currentDate),
       [QuestionPromptGenerator('/about')]: QuestionConstructor(locMap['/about'] ?? currentDate),
+      [QuestionPromptGenerator('/downloads')]: QuestionConstructor(locMap['/downloads'] ?? currentDate),
       [QuestionPromptGenerator('/terms_of_use')]: QuestionConstructor(locMap['/terms_of_use'] ?? currentDate),
       [QuestionPromptGenerator('/careers')]: QuestionConstructor(locMap['/careers'] ?? currentDate),
     },
