@@ -12,7 +12,6 @@ import { careers } from './careers.js';
 import { downloads } from './downloads.js';
 import { contactInformation } from './index.config.js';
 
-
 const port = parseInt(process.env.PORT, 10) || 3000;
 
 const CurrentDir = path.resolve();
@@ -51,8 +50,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('pages/about', contactInformation
-  });
+  res.render('pages/about', contactInformation);
 });
 
 app.get('/careers', (req, res) => {
@@ -70,8 +68,7 @@ app.get('/downloads', (req, res) => {
 });
 
 app.get('/terms_of_use', (req, res) => {
-  res.render('pages/termsOfUse', contactInformation
-  });
+  res.render('pages/termsOfUse', contactInformation);
 });
 
 products.forEach((product) => {
