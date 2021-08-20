@@ -1,7 +1,7 @@
 (() => {
-  const STATE_REP_SELECTOR = 'stateSelect';
-  const PROVINCE_REP_SELECTOR = 'provinceSelect';
-  const COUNTRY_SELECTOR = 'countrySelect';
+  const STATE_REP_SELECT = 'stateSelect';
+  const PROVINCE_REP_SELECT = 'provinceSelect';
+  const LOCAL_REP_COUNTRY_SELECT = 'countrySelect';
   const OPEN_CONTACT_FORM_ELEMENTS = 'button[data-contact="true"],a[data-contact="true"]';
   const CLOSE_CONTACT_FORM_ELEMENTS = '*[data-contact="false"]';
   const REP_DATA_SECTION = 'repSection';
@@ -11,6 +11,17 @@
   const MODAL_CONTAINER = 'modalContainer';
   const MODAL = 'modal';
   const CLOSE_MODAL_CLASS = 'contactModal--closed';
+  const REPS_FORM = 'localRepsForm';
+  const CONTACT_FORM = 'directContact';
+  const TOGGLE_TO_DIRECT_BUTTON = 'toggleToDirect';
+  const TOGGLE_TO_REPS_BUTTON = 'toggleToReps';
+  const RESET_FORM_BUTTON = 'clearForm';
+  const DIRECT_CONTACT_COUNTRY_SELECT = 'country';
+  const DIRECT_CONTACT_STATE_SELECTS_AREA = 'stateArea';
+  const UNITED_STATES_VERBOSE = 'United States of America';
+  const CANADA_VERBOSE = 'Canada';
+  const DIRECT_CONTACT_STATE_SELECT = 'state';
+  const DIRECT_CONTACT_PROVINCE_SELECT = 'province';
 
   /**
    * @function resetRepData
@@ -86,20 +97,20 @@
    * Updates the HTML that displays the rep contact information and updates the rep selection form
    */
   const handleRepSelect = () => {
-    const { value } = document.getElementById(COUNTRY_SELECTOR) ?? window.USA;
+    const { value } = document.getElementById(LOCAL_REP_COUNTRY_SELECT) ?? window.USA;
     let stateOrProvince;
     resetRepData();
     switch (value) {
       case window.USA:
-        stateOrProvince = document.getElementById(STATE_REP_SELECTOR).value ?? DEFAULT_STATE;
-        toggleVisibility(STATE_REP_SELECTOR, 'block');
-        toggleVisibility(PROVINCE_REP_SELECTOR, 'none');
+        stateOrProvince = document.getElementById(STATE_REP_SELECT).value ?? DEFAULT_STATE;
+        toggleVisibility(STATE_REP_SELECT, 'block');
+        toggleVisibility(PROVINCE_REP_SELECT, 'none');
         updateRepData(value, stateOrProvince);
         break;
       case window.CAN:
-        stateOrProvince = document.getElementById(PROVINCE_REP_SELECTOR).value;
-        toggleVisibility(STATE_REP_SELECTOR, 'none');
-        toggleVisibility(PROVINCE_REP_SELECTOR, 'block');
+        stateOrProvince = document.getElementById(PROVINCE_REP_SELECT).value;
+        toggleVisibility(STATE_REP_SELECT, 'none');
+        toggleVisibility(PROVINCE_REP_SELECT, 'block');
         updateRepData(value, stateOrProvince);
         break;
       default:
@@ -148,16 +159,116 @@
   };
 
   /**
+   * @function toggleDirectState
+   * @listens onchange of #country
+   * Toggles the selects for state or province if the user selects US or CAN
+   */
+  const toggleDirectState = () => {
+    const { value } = document.getElementById(DIRECT_CONTACT_COUNTRY_SELECT);
+    switch (value) {
+      case UNITED_STATES_VERBOSE:
+        document.getElementById(DIRECT_CONTACT_STATE_SELECTS_AREA).style.display = 'block';
+        document.getElementById(labelSelecter(DIRECT_CONTACT_STATE_SELECT)).style.display = 'block';
+        document.getElementById(DIRECT_CONTACT_STATE_SELECT).style.display = 'block';
+        document.getElementById(labelSelecter(DIRECT_CONTACT_PROVINCE_SELECT)).style.display = 'none';
+        document.getElementById(DIRECT_CONTACT_PROVINCE_SELECT).style.display = 'none';
+        break;
+      case CANADA_VERBOSE:
+        document.getElementById(DIRECT_CONTACT_STATE_SELECTS_AREA).style.display = 'block';
+        document.getElementById(labelSelecter(DIRECT_CONTACT_STATE_SELECT)).style.display = 'none';
+        document.getElementById(DIRECT_CONTACT_STATE_SELECT).style.display = 'none';
+        document.getElementById(labelSelecter(DIRECT_CONTACT_PROVINCE_SELECT)).style.display = 'block';
+        document.getElementById(DIRECT_CONTACT_PROVINCE_SELECT).style.display = 'block';
+        break;
+      default:
+        document.getElementById(labelSelecter(DIRECT_CONTACT_STATE_SELECT)).style.display = 'block';
+        document.getElementById(DIRECT_CONTACT_STATE_SELECT).style.display = 'block';
+        document.getElementById(labelSelecter(DIRECT_CONTACT_PROVINCE_SELECT)).style.display = 'none';
+        document.getElementById(DIRECT_CONTACT_PROVINCE_SELECT).style.display = 'none';
+        document.getElementById(DIRECT_CONTACT_STATE_SELECTS_AREA).style.display = 'none';
+    }
+  };
+
+  /**
+   * @function resetDirectForm
+   * @listens onclick of reset button
+   * Resets the contact form to original state
+   */
+  const resetDirectForm = () => {
+    const inputEls = document.querySelectorAll('.directContact input,.directContact select,.directContact textarea');
+    inputEls.forEach((el) => {
+      /**
+       * Disabled because we want to modify the HTML element
+       */
+      /* eslint-disable no-param-reassign */
+      switch (el.nodeName) {
+        case 'TEXTAREA':
+        case 'INPUT':
+          if (el.getAttribute('type') === 'checkbox') {
+            el.checked = false;
+          } else {
+            el.value = '';
+          }
+          break;
+        case 'SELECT':
+          el.selectedIndex = 0;
+          break;
+        default:
+          el.value = '';
+          break;
+      }
+    });
+    toggleDirectState();
+  };
+
+  /**
+   * @function openDirectForm
+   * @see handleRepSelect
+   * @see toggleDirectState
+   * @listens onclick of switch button
+   * Switches modal content to the direct contact form
+   */
+  const openDirectForm = () => {
+    document.getElementById(LOCAL_REP_COUNTRY_SELECT).removeEventListener('change', handleRepSelect);
+    document.getElementById(STATE_REP_SELECT).removeEventListener('change', handleRepSelect);
+    document.getElementById(PROVINCE_REP_SELECT).removeEventListener('change', handleRepSelect);
+    document.getElementById(DIRECT_CONTACT_COUNTRY_SELECT).addEventListener('change', toggleDirectState);
+    document.getElementById(REPS_FORM).style.display = 'none';
+    document.getElementById(CONTACT_FORM).style.display = 'block';
+    toggleDirectState();
+  };
+
+  /**
+   * @function openLocalReps
+   * @see openDirectForm
+   * @see handleRepSelect
+   * Switches modal content to the local reps form
+   */
+  const openLocalReps = () => {
+    document.getElementById(REPS_FORM).style.display = 'block';
+    document.getElementById(CONTACT_FORM).style.display = 'none';
+    document.getElementById(TOGGLE_TO_DIRECT_BUTTON).addEventListener('click', openDirectForm);
+    document.getElementById(LOCAL_REP_COUNTRY_SELECT).addEventListener('change', handleRepSelect);
+    document.getElementById(STATE_REP_SELECT).addEventListener('change', handleRepSelect);
+    document.getElementById(PROVINCE_REP_SELECT).addEventListener('change', handleRepSelect);
+    handleRepSelect();
+  };
+
+  /**
    * @function openContactForm
+   * @see openDirectForm
+   * @see focusFirstModalElement
+   * @see openLocalReps
+   * @see captureModalFocus
    * @listens onclick of data-contact="true" elements
    * Opens the contact modal and captures keyboard focus
    */
   const openContactForm = () => {
-    document.getElementById(COUNTRY_SELECTOR).addEventListener('change', handleRepSelect);
-    document.getElementById(STATE_REP_SELECTOR).addEventListener('change', handleRepSelect);
-    document.getElementById(PROVINCE_REP_SELECTOR).addEventListener('change', handleRepSelect);
     document.addEventListener('keydown', captureModalFocus);
-    handleRepSelect();
+    document.getElementById(TOGGLE_TO_REPS_BUTTON).addEventListener('click', openLocalReps);
+    document.getElementById(RESET_FORM_BUTTON).addEventListener('click', resetDirectForm);
+    openDirectForm();
+
     const modal = document.getElementById(MODAL);
     document.getElementById(MODAL_CONTAINER).style.display = 'flex';
     setTimeout(() => {
@@ -168,14 +279,19 @@
 
   /**
    * @function closeContactForm
+   * @see captureModalFocus
+   * @see resetDirectForm
+   * @see toggleDirectState
    * @listens onclick of data-contact="false" elements
-   * Clsoes the contact modal and releases keyboard focus
+   * Closes the contact modal and releases keyboard focus
    */
   const closeContactForm = () => {
-    document.getElementById(COUNTRY_SELECTOR).removeEventListener('change', handleRepSelect);
-    document.getElementById(STATE_REP_SELECTOR).removeEventListener('change', handleRepSelect);
-    document.getElementById(PROVINCE_REP_SELECTOR).removeEventListener('change', handleRepSelect);
+    openDirectForm();
+    resetDirectForm();
+
     document.removeEventListener('keydown', captureModalFocus);
+    document.getElementById(DIRECT_CONTACT_COUNTRY_SELECT).removeEventListener('change', toggleDirectState);
+    document.getElementById(RESET_FORM_BUTTON).removeEventListener('click', resetDirectForm);
     const modal = document.getElementById(MODAL);
     modal.classList.add(CLOSE_MODAL_CLASS);
     setTimeout(() => {

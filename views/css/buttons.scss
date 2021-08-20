@@ -35,6 +35,19 @@
       border-color: darken($pw-purple, 10deg);
     }
   }
+  &--warning {
+    &:visited {
+      color: black;
+    }
+    background-color: $pw-yellow;
+    border-color: $pw-yellow;
+    color: black;
+    &:hover, &:focus {
+      background-color: darken($pw-yellow, 10deg);
+      border-color: darken($pw-yellow, 10deg);
+    }
+     
+  }
   &--secondary {
     &:visited {
       color: black;
