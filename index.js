@@ -10,14 +10,8 @@ import path from 'path';
 import { products } from './products.js';
 import { careers } from './careers.js';
 import { downloads } from './downloads.js';
-import {
-  COUNTRIES,
-  US_STATES,
-  REP_LOOKUP,
-  CAN,
-  USA,
-  CAN_PROVINCES,
-} from './contactData.js';
+import { contactInformation } from './index.config.js';
+
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 
@@ -52,68 +46,31 @@ app.use(express.static('views'));
 app.get('/', (req, res) => {
   res.render('pages/index', {
     products,
-    contact: {
-      COUNTRIES,
-      US_STATES,
-      CAN_PROVINCES,
-      REP_LOOKUP,
-      CAN,
-      USA,
-    },
+    ...contactInformation,
   });
 });
 
 app.get('/about', (req, res) => {
-  res.render('pages/about', {
-    contact: {
-      COUNTRIES,
-      US_STATES,
-      CAN_PROVINCES,
-      REP_LOOKUP,
-      CAN,
-      USA,
-    },
+  res.render('pages/about', contactInformation
   });
 });
 
 app.get('/careers', (req, res) => {
   res.render('pages/careers', {
     careers,
-    contact: {
-      COUNTRIES,
-      US_STATES,
-      CAN_PROVINCES,
-      REP_LOOKUP,
-      CAN,
-      USA,
-    },
+    ...contactInformation,
   });
 });
 
 app.get('/downloads', (req, res) => {
   res.render('pages/downloads', {
     downloads,
-    contact: {
-      COUNTRIES,
-      US_STATES,
-      CAN_PROVINCES,
-      REP_LOOKUP,
-      CAN,
-      USA,
-    },
+    ...contactInformation,
   });
 });
 
 app.get('/terms_of_use', (req, res) => {
-  res.render('pages/termsOfUse', {
-    contact: {
-      COUNTRIES,
-      US_STATES,
-      CAN_PROVINCES,
-      REP_LOOKUP,
-      CAN,
-      USA,
-    },
+  res.render('pages/termsOfUse', contactInformation
   });
 });
 
@@ -121,11 +78,7 @@ products.forEach((product) => {
   app.get(product.endpoint, (req, res) => {
     res.render('pages/productPage', {
       product,
-      contact: {
-        COUNTRIES,
-        US_STATES,
-        CAN_PROVINCES,
-      },
+      ...contactInformation,
     });
   });
 });

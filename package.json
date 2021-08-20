@@ -10,6 +10,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "precompile": "sass views/css:public/css",
     "compile": "node compiler.js",
     "generate-sitemap": "node sitemapGenerator.js",
     "start": "concurrently --kill-others \"nodemon --ext ejs,js,pug --ignore public\" \"npm run watch:scss\"",
@@ -29,6 +30,7 @@
     "eslint-plugin-json-format": "^2.0.1",
     "express": "^4.17.1",
     "express-hbs": "^2.4.0",
+    "fs-extra": "^10.0.0",
     "livereload": "^0.9.3",
     "nodemon": "^2.0.12",
     "prompt": "^1.1.0",
