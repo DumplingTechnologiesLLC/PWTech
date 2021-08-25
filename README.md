@@ -11,7 +11,7 @@ For Linux:
 # Setup and Use
 
 1. Download this project
-2. Run `npm install`
+2. Run `npm install` in the directory you just downloaded
 
 
 ## For Development
@@ -139,6 +139,8 @@ const questions = {
 
 
 ## For Production
+
+If you need to modify the URL prefix for the views, you can do so in `index.config.js` by modifying the `URL_PREFIX` variable
 
 Once your changes are complete, you can run `npm run compile` to have all the templates compiled into the `public`
 directory, which you can then serve directly as static files.
