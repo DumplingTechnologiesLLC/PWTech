@@ -4,7 +4,7 @@
     <% products.forEach(function(product) { %>
       <div class="card card--vertical card--product">
           <h3><%= product.title %></h3>
-          <a href="<%= product.endpoint %>">
+          <a href="<%- URL_PREFIX %><%= product.endpoint %>">
             <img src="../assets/<%= product.image %>" alt="<%= product.alt %>">
           </a>
           <button 

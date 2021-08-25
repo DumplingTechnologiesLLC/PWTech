@@ -18,4 +18,6 @@ export const contactInformation = {
   },
 };
 
+export const URL_PREFIX = 'newtest/public';
+
 export default contactInformation;

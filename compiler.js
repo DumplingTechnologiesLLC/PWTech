@@ -6,7 +6,7 @@ import fs from 'fs';
 import ejs from 'ejs';
 import path from 'path';
 import fse from 'fs-extra';
-import { contactInformation } from './index.config.js';
+import { contactInformation, URL_PREFIX } from './index.config.js';
 import { products } from './products.js';
 import { careers } from './careers.js';
 import { downloads } from './downloads.js';
@@ -28,7 +28,7 @@ const compile = (file, templatePath, data = {}, fileName) => {
   const toPath = path.join(__dirname, 'public', 'views', `${name}.html`);
   const templateStr = ejs.fileLoader(templatePath, 'utf8');
   const template = ejs.compile(templateStr, { filename: templatePath });
-  const renderedHtml = template({ ...data, ...contactInformation });
+  const renderedHtml = template({ ...data, ...contactInformation, URL_PREFIX });
   fs.writeFile(toPath, renderedHtml, (err) => {
     if (err) { console.log(err.toString()); return false; }
     return true;

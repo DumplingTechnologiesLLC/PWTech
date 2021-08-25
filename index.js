@@ -10,7 +10,7 @@ import path from 'path';
 import { products } from './products.js';
 import { careers } from './careers.js';
 import { downloads } from './downloads.js';
-import { contactInformation } from './index.config.js';
+import { contactInformation, URL_PREFIX } from './index.config.js';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 
@@ -45,6 +45,7 @@ app.use(express.static('views'));
 app.get('/', (req, res) => {
   res.render('pages/index', {
     products,
+    URL_PREFIX,
     ...contactInformation,
   });
 });
@@ -56,6 +57,7 @@ app.get('/about', (req, res) => {
 app.get('/careers', (req, res) => {
   res.render('pages/careers', {
     careers,
+    URL_PREFIX,
     ...contactInformation,
   });
 });
@@ -63,6 +65,7 @@ app.get('/careers', (req, res) => {
 app.get('/downloads', (req, res) => {
   res.render('pages/downloads', {
     downloads,
+    URL_PREFIX,
     ...contactInformation,
   });
 });
@@ -75,6 +78,7 @@ products.forEach((product) => {
   app.get(product.endpoint, (req, res) => {
     res.render('pages/productPage', {
       product,
+      URL_PREFIX,
       ...contactInformation,
     });
   });
