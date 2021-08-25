@@ -13,6 +13,7 @@
     "precompile": "sass views/css:public/css",
     "compile": "node compiler.js",
     "generate-sitemap": "node sitemapGenerator.js",
+    "prestart": "sass views/css"
     "start": "concurrently --kill-others \"nodemon --ext ejs,js,pug --ignore public\" \"npm run watch:scss\"",
     "watch:scss": "sass --watch views/css:public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
